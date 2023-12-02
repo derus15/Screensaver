@@ -2,19 +2,26 @@ const canvas = document.getElementById('stars');
 const ctx = canvas.getContext('2d');
 
 const stars = [];
-const countStars = 200;
-const colorStars = 'white';
+let countStars
+let colorStars = 'white';
+const input = document.querySelector('.params');
+const button = document.querySelector('.button');
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-for (let i = 0; i < countStars; i++) {
-    stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 3,
-        speed: Math.random() + 0.1
-    });
+function initStars() {
+
+    countStars = input.value || 200;
+
+    for (let i = 0; i < countStars; i++) {
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 3,
+            speed: Math.random() + 0.1
+        });
+    }
 }
 
 function drawStars() {
@@ -37,4 +44,13 @@ function drawStars() {
     requestAnimationFrame(drawStars);
 }
 
+initStars();
 drawStars();
+
+button.addEventListener('click', () => { initStars();} )
+document.addEventListener('keydown', (event) => {
+    if (event.keyCode == '32') {
+        input.classList.toggle('hidden')
+        button.classList.toggle('hidden')
+    }
+})
