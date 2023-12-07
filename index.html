@@ -17,11 +17,13 @@
     .params {
         position: absolute;
         width: 100px;
-        height: 20px;
+        height: 27px;
         background: gray;
         color: black;
         font-size: 25px;
         border-radius: 15px;
+        box-sizing: border-box;
+        border: none;
     }
     .button {
         position: absolute;
@@ -33,6 +35,7 @@
         border-radius: 15px;
         cursor: pointer;
         margin-left: 120px;
+        border: none;
     }
     .button:hover{
         background: wheat;
@@ -45,9 +48,9 @@
     }
 </style>
 <body>
-<canvas id="stars">
-</canvas>
+<canvas id="stars"></canvas>
 <input class="params hidden"/>
+<input type="color" id='color' value="#ffffff" class="params hidden" style="margin-top: 40px"/>
 <button class="button hidden">Generate</button>
 <script src="script.js"></script>
 </body>
