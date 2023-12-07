@@ -24,18 +24,12 @@
         border-radius: 15px;
         box-sizing: border-box;
         border: none;
+        padding: 3px;
     }
     .button {
-        position: absolute;
-        width: 100px;
-        height: 27px;
-        background: gray;
         font-size: 16px;
-        color: black;
-        border-radius: 15px;
         cursor: pointer;
         margin-left: 120px;
-        border: none;
     }
     .button:hover{
         background: wheat;
@@ -50,8 +44,9 @@
 <body>
 <canvas id="stars"></canvas>
 <input class="params hidden"/>
-<input type="color" id='color' value="#ffffff" class="params hidden" style="margin-top: 40px"/>
-<button class="button hidden">Generate</button>
+<input type="color" id='colorStars' value="#ffffff" class="params hidden" style="margin-top: 40px"/>
+<input type="color" id='colorBack' value="#00000" class="params hidden" style="margin-top: 80px"/>
+<button class=" params button hidden">Generate</button>
 <script src="script.js"></script>
 </body>
 </html>

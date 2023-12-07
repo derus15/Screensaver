@@ -2,9 +2,11 @@ const canvas = document.getElementById('stars');
 const ctx = canvas.getContext('2d');
 
 const stars = [];
+const back = document.getElementById('stars');
 const starsInput = document.querySelector('.params');
 const button = document.querySelector('.button');
-const colorInput = document.getElementById('color');
+const colorStarsInput = document.getElementById('colorStars');
+const colorBackInput = document.getElementById('colorBack');
 let countStars;
 
 canvas.width = window.innerWidth;
@@ -26,13 +28,14 @@ function initStars() {
 
 function drawStars() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    back.style.background = colorBackInput.value;
 
     for (let i = 0; i < stars.length; i++) {
         const star = stars[i];
 
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        ctx.fillStyle = colorInput.value;
+        ctx.fillStyle = colorStarsInput.value;
         ctx.fill();
 
         star.x -= star.speed;
@@ -51,7 +54,8 @@ button.addEventListener('click', () => { initStars();} )
 document.addEventListener('keydown', (event) => {
     if (event.keyCode == '32') {
         starsInput.classList.toggle('hidden');
-        colorInput.classList.toggle('hidden');
+        colorStarsInput.classList.toggle('hidden');
         button.classList.toggle('hidden');
+        colorBackInput.classList.toggle('hidden');
     }
 })
