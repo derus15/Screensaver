@@ -5,8 +5,11 @@
 Simple screensaver with moving stars.
 
 Press the space bar to open/close the settings.
+
 When you press the "Generate" button, 200 stars will appear, or
 you can set your number yourself.
+In the second line you can specify the size interval for generation from 1 to value
+
 The highest number of stars depends on the processor, my laptop starts to feel bad at 5 thousand.
 You can also choose the color of the stars and background
 

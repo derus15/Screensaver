@@ -20,14 +20,14 @@
         height: 27px;
         background: gray;
         color: black;
-        font-size: 25px;
+        font-size: 20px;
         border-radius: 15px;
         box-sizing: border-box;
         border: none;
         padding: 3px;
     }
     .button {
-        font-size: 16px;
+        font-size: 18px;
         cursor: pointer;
         margin-left: 120px;
     }
@@ -43,9 +43,10 @@
 </style>
 <body>
 <canvas id="stars"></canvas>
-<input class="params hidden"/>
-<input type="color" id='colorStars' value="#ffffff" class="params hidden" style="margin-top: 40px"/>
-<input type="color" id='colorBack' value="#00000" class="params hidden" style="margin-top: 80px"/>
+<input type='text' value=200 class="params hidden"/>
+<input type="text" id='size' value='3' class="params hidden" style="margin-top: 40px"/>
+<input type="color" id='colorStars' value="#ffffff" class="params hidden" style="margin-top: 80px"/>
+<input type="color" id='colorBack' value="#00000" class="params hidden" style="margin-top: 120px"/>
 <button class=" params button hidden">Generate</button>
 <script src="script.js"></script>
 </body>

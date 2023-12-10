@@ -7,6 +7,7 @@ const starsInput = document.querySelector('.params');
 const button = document.querySelector('.button');
 const colorStarsInput = document.getElementById('colorStars');
 const colorBackInput = document.getElementById('colorBack');
+const sizeInput = document.getElementById('size');
 let countStars;
 
 canvas.width = window.innerWidth;
@@ -20,7 +21,7 @@ function initStars() {
         stars.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            size: Math.random() * 3,
+            size: Math.random() * sizeInput.value,
             speed: Math.random() + 0.1
         });
     }
@@ -57,5 +58,6 @@ document.addEventListener('keydown', (event) => {
         colorStarsInput.classList.toggle('hidden');
         button.classList.toggle('hidden');
         colorBackInput.classList.toggle('hidden');
+        sizeInput.classList.toggle('hidden');
     }
 })
